@@ -1,0 +1,47 @@
+@charset "UTF-8";
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box; /* padding, border를 기존 영역안에 흡수 */
+    color: inherit; // 모든 요소의 글자 색상은 강제로 상속받도록 처리함
+    //a요소인 링크는 따로 텍스트 컬러 미지정시
+    // 기본 색상 파란색, 클릭한  링크는 짙은 보라색 설정
+}
+ul, ol, li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+// body {
+//     background-color: #efefef;
+// }
+
+html { 
+    //왜 적용이 안될까?
+    //기본적으로 따로 폰트 사이즈를 변경하지 않으면 브라우저는 기본 폰트크기를 16px로 인지
+    //해외에서는 기본 새로운 폰트단위인 1rem단위(16px)
+    //유지보수를 편하게 하기 위해서 고정 px값을 쓰는 것이 아닌 1rem, 1.5rem, 0.8rem 같은 식으로
+    //위와 같이 설정하는 이유 : rem을 통해서 비율크기로 폰트크기를 지정해놓으면
+    //추후 클라이언트가 전반적인 폰트의 크기 축소, 확대를 요구했을 때 일일이 폰트의 px크기를 조절하는것이 아닌
+    // html선택자에 등록되어있는 font-size를 조절하는 방식으로 1rem의 기본 크기 변경가능
+    // 패턴 - css 작업시 무조건 본문은 1rem으로 잡고 그 기준점에서 글자 크기를 비율로 설정
+    // 추구 전반적인 글자크기 변경 요청사항이 왔을 때 html {font-size:변경}
+    // 본문:1rem;
+    // 작게 축소 :0.8rem
+    // 중제목 :1.4rem
+    font-size: 16px; 
+    //1rem (root element) 2rem:32px, 0.8rem:14px;
+    // html에 font-size설정:시스템의 기본적용된 1rem의 크기를 변경(16px)
+    // 전체 글자크기 비율을 유지하면서 전반적으로 키우거나 작게 요청
+    // 사용자가 UI상에서 전체적인 글자 크기를 변경해야되는 접근성 이슈
+
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s;
+}
